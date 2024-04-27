@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace Ghoul.Models;
 
 public class WastelandContext : DbContext

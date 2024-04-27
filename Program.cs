@@ -1,4 +1,5 @@
 using Ghoul.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<WastelandContext>(Options => Options.UseInMemoryDatabase("RobCo"));
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -34,3 +36,5 @@ app.Run();
 //  dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 //  dotnet add package Microsoft.EntityFrameworkCore.Tools
 //  dotnet tool install --global dotnet-aspnet-codegenerator
+//  dotnet add package Microsoft.EntityFrameworkCore.InMemory
+//  dotnet aspnet-codegenerator controller -name UsersController -async -api -m User -dc WastelandContext -outDir Controllers
