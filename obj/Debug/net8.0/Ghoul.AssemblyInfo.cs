@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ghoul")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+da73f12ad47f313d32c490855c55d8dffc34e2a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0999b577cdbf0ea8ec90efe356fe63664a29c660")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ghoul")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ghoul")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
