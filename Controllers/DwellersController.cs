@@ -11,47 +11,47 @@ namespace Ghoul.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : ControllerBase
+    public class DwellersController : ControllerBase
     {
         private readonly WastelandContext _context;
 
-        public UsersController(WastelandContext context)
+        public DwellersController(WastelandContext context)
         {
             _context = context;
         }
 
-        // GET: api/Users
+        // GET: api/Dwellers
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        public async Task<ActionResult<IEnumerable<Dweller>>> GetDwellers()
         {
-            return await _context.Users.ToListAsync();
+            return await _context.Dwellers.ToListAsync();
         }
 
-        // GET: api/Users/5
+        // GET: api/Dwellers/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        public async Task<ActionResult<Dweller>> GetDweller(int id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var dweller = await _context.Dwellers.FindAsync(id);
 
-            if (user == null)
+            if (dweller == null)
             {
                 return NotFound();
             }
 
-            return user;
+            return dweller;
         }
 
-        // PUT: api/Users/5
+        // PUT: api/Dwellers/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        public async Task<IActionResult> PutDweller(int id, Dweller dweller)
         {
-            if (id != user.Id)
+            if (id != dweller.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+            _context.Entry(dweller).State = EntityState.Modified;
 
             try
             {
@@ -59,7 +59,7 @@ namespace Ghoul.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserExists(id))
+                if (!DwellerExists(id))
                 {
                     return NotFound();
                 }
@@ -72,36 +72,36 @@ namespace Ghoul.Controllers
             return NoContent();
         }
 
-        // POST: api/Users
+        // POST: api/Dwellers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<ActionResult<Dweller>> PostDweller(Dweller dweller)
         {
-            _context.Users.Add(user);
+            _context.Dwellers.Add(dweller);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.Id }, user);
+            return CreatedAtAction("GetDweller", new { id = dweller.Id }, dweller);
         }
 
-        // DELETE: api/Users/5
+        // DELETE: api/Dwellers/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(int id)
+        public async Task<IActionResult> DeleteDweller(int id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
+            var dweller = await _context.Dwellers.FindAsync(id);
+            if (dweller == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(user);
+            _context.Dwellers.Remove(dweller);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool UserExists(int id)
+        private bool DwellerExists(int id)
         {
-            return _context.Users.Any(e => e.Id == id);
+            return _context.Dwellers.Any(e => e.Id == id);
         }
     }
 }

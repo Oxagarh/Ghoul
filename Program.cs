@@ -37,4 +37,4 @@ app.Run();
 //  dotnet add package Microsoft.EntityFrameworkCore.Tools
 //  dotnet tool install --global dotnet-aspnet-codegenerator
 //  dotnet add package Microsoft.EntityFrameworkCore.InMemory
-//  dotnet aspnet-codegenerator controller -name UsersController -async -api -m User -dc WastelandContext -outDir Controllers
+//  dotnet aspnet-codegenerator controller -name DwellersController -async -api -m Dweller -dc WastelandContext -outDir Controllers

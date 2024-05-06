@@ -6,5 +6,5 @@ public class WastelandContext : DbContext
 {
     public WastelandContext(DbContextOptions<WastelandContext> options) : base (options) { }
     
-    public DbSet<User> Users { get; set; }
+    public DbSet<Dweller> Dwellers { get; set; }
 }
